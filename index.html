@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Todo List</title>
+</head>
+
+<body onload="showData()">
+
+    <div class="container">
+        <div class="card text-center">
+            <h1 class="card-header text-primary">Todo List</h1>
+            <form onsubmit="addData(); return false;">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Your Id:</label>
+                    <input type="text" class="form-control addInputId" id="id" placeholder="Enter Your Id">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Your Name:</label>
+                    <input type="text" class="form-control addInputName" id="name" placeholder="Enter Your name">
+                </div>
+
+
+                <label for="formGroupExampleInput2">Priority:</label>
+                <select class="form-control addInputPriority" id="priority">
+                    <option value="high">High</option>
+                    <!-- <option value="medium">Medium</option> -->
+                    <option value="low">Low</option>
+                </select>
+                <input type="submit" class="btn btn-outline-dark" value="Submit">
+                <!-- <input type="reset" class="btn btn-outline-dark" value="clear"> -->
+                <!-- <input type="button" class="btn btn-outline-dark" value="Delete" onclick="deleteData();"> -->
+                <!-- <input type="button" class="btn btn-outline-dark" id="edit_button1" value="Edit" class="edit" onclick="edit_row('1')"> -->
+                <!-- <input type="button" class="btn btn-outline-dark" id="save_button1" value="Save" class="save" onclick="save_row('1')"> -->
+                <!-- <input type="button" class="btn btn-outline-dark" id="save_button1" value="Update" class="save" onclick="save_row('1')"> -->
+                <!-- <input type="button" class="btn btn-outline-dark" value="Delete" class="delete" onclick="delete_row('1')"> -->
+            </form>
+
+            <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search for names.." title="Type in a name">
+            <div>
+                <!-- <button id="add-button" class="btn btn-outline-dark" value="Add Todo">Add Todo</button>
+                <button id="edit-button" class="btn btn-outline-dark" value="Add Todo">Update Todo</button> -->
+
+
+                <!-- <button id="add-button" class="btn btn-outline-dark" onclick="addTodoListItem()">Add Todo</button>
+                <button id="edit-button" class="btn btn-outline-dark">Update Todo</button>
+                <button id="add-button" class="btn btn-outline-dark" onclick="addTodoListUpdated()">Add Todo</button> -->
+
+            </div>
+
+            <div class="container text-center">
+                <h3 class="text-center">Priority Sort</h3>
+                <button class="btn btn-primary" onclick="sortTable()">Sort (Ascending/Descending )</button>
+            </div>
+
+
+        </div>
+        <table class="table" id="myTable">
+            <tr>
+                <!-- <th>Id</th>
+                <th>Name</th>
+                <th>Priority</th> -->
+                <th onclick="sort_table(people, 0, asc1); asc1 *= -1; asc2 = 1; asc3 = 1;">Id</th>
+                <th onclick="sort_table(people, 1, asc2); asc2 *= -1; asc3 = 1; asc1 = 1;">Name</th>
+                <th onclick="sort_table(people, 2, asc3); asc3 *= -1; asc1 = 1; asc2 = 1;">Priority</th>
+
+            </tr>
+        </table>
+
+
+    </div>
+    <script src="js/todo.js"></script>
+</body>
+
+</html>
